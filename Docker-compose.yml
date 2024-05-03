@@ -1,4 +1,10 @@
-version: '3'
+version: '3.8'
 services:
-  web:
-    image: pyscraping:1
+  selenium:
+    build: .
+    image: scrappy
+    command: ["/bin/sh"]
+    depends_on:
+      - selenium-chrome
+  selenium-chrome:
+    image: selenium/standalone-chrome

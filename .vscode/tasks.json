@@ -49,8 +49,8 @@
                 "run",
                 "-it",
                 "--rm",
+                "--network", "grid",
                 "--name", "web",
-                "-v","$(pwd):/app",
                 "pyscraping:1",
                 
             ],
