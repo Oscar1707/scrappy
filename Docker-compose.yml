@@ -1,10 +1,7 @@
-version: '3.8'
+version: '3'
 services:
-  selenium:
+  web:
     build: .
-    image: scrappy
-    command: ["/bin/sh"]
-    depends_on:
-      - selenium-chrome
-  selenium-chrome:
-    image: selenium/standalone-chrome
+    image: nodescraping:1
+    volumes:
+      - /Users/oscaracacio/Documents/ws/webscraping:/app

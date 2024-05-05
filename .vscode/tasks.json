@@ -29,7 +29,7 @@
             "args": [
                 "build",
                 "-t",
-                "pyscraping:1",
+                "nodescraping:1",
                 "."
             ],
             "group": {
@@ -49,9 +49,9 @@
                 "run",
                 "-it",
                 "--rm",
-                "--network", "grid",
                 "--name", "web",
-                "pyscraping:1",
+                "-v","$(pwd)",
+                "nodescraping:1",
                 
             ],
             "group": {

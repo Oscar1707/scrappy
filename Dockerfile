@@ -1,6 +1,6 @@
-FROM python:latest
+FROM node:latest
 WORKDIR /app
 COPY . .
-RUN python -m venv venvı
-RUN pip install -r requirements.txt
-CMD [ "/bin/bash" ]
+RUN npm install
+
+CMD [ "/bin/bash"]
