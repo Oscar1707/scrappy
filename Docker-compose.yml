@@ -1,10 +1,14 @@
-version: '3.8'
+version: '3.0'
 services:
-  selenium:
-    build: .
-    image: scrappy
-    command: ["/bin/sh"]
-    depends_on:
-      - selenium-chrome
-  selenium-chrome:
-    image: selenium/standalone-chrome
+  chrome:
+    image: selenium/standalone-chrome:latest #selenarm/standalone-chrome:latest
+    shm_size: 2gb
+    container_name: sele-chrome
+    environment:
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_SESSIONS_TIMEOUT=1000
+      - SE_VNC_NO_PASSWORD=1
+    restart: always
+    ports:
+      - "4444:4444"
+      
